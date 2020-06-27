@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        python-version: [2.7, 3.6]
+        python-version: [2.7]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Clone and checkout
@@ -33,8 +33,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     # Build with python version from the matrix
-    - name: Build with python2
-      run: python mbs/mbs
+    - name: Build with python ${{ matrix.python-version }}
+      run: python${{ matrix.python-version }} mbs/mbs
 
     - uses: actions/upload-artifact@v2
       with:
