@@ -35,4 +35,8 @@ jobs:
     # Build with python version from the matrix
     - name: Build with python2
       run: python mbs/mbs
-    
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: hboot_image_compiler
+        path: targets/repository/org/muhkuh/tools/hboot_image_compiler/**/hboot_image_compiler-*.zip
