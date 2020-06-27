@@ -23,6 +23,8 @@ jobs:
     steps:
     # Clone and checkout
     - uses: actions/checkout@v2
+      with:
+        submodules: true
 
     # Get matching python version
     - name: Set up Python ${{ matrix.python-version }}
