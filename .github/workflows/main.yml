@@ -32,7 +32,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    # Build with python2
+    # Build with python version from the matrix
     - name: Build with python2
-      run: python2 mbs/mbs
+      run: python mbs/mbs
     
